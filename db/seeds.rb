@@ -16,7 +16,7 @@ PASSWORD = "supersecret"
 super_user = User.create(
     first_name: "Daniel",
     last_name: "O'brien",
-    email: "do@maz.run",
+    email: "do@maze.run",
     password: PASSWORD
 )
 
