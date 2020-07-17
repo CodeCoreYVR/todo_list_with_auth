@@ -11,8 +11,9 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.new(params.require(:task).permit(:title))
+        @task.user = current_user
         if @task.save 
-            redirect_to tasks_path
+            redirect_to task_path(@task)
         else
             redirect_to new_task_path
         end
