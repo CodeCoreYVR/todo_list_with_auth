@@ -11,4 +11,6 @@ class User < ApplicationRecord
     #   2 - bcrypt gem 
     #   3 - a field in user's table that's called password_digest
     #   4 - having has_secure_password in user's model
+
+    has_many :tasks, dependent: :destroy
 end

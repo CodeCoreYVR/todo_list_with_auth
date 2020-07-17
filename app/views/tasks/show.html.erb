@@ -1,4 +1,7 @@
 <h1><%= @task.title %></h1>
+<p><%= time_ago_in_words(@task.created_at) %></p>
+<strong><%= @task.user.first_name %> <%= @task.user.last_name %></strong>
+<hr />
 <% if @task.is_complete %>
     <%= link_to(
         'Set to Undone',

@@ -9,7 +9,7 @@
 Task.delete_all
 User.delete_all 
 
-NUM_TASK = 10
+NUM_TASK = 31
 NUM_USER = 5
 PASSWORD = "supersecret"
 
@@ -29,12 +29,15 @@ NUM_USER.times do
     )
 end
 
+users = User.all
+
 NUM_TASK.times do 
     created_at = Faker::Date.backward(days: 365 * 5)
     Task.create(
         title: Faker::Hacker.say_something_smart,
         created_at: created_at,
-        updated_at: created_at
+        updated_at: created_at,
+        user: users.sample # array method that randomly picks an element from an array 
     )
 end
 
