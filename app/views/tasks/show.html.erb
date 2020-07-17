@@ -1,9 +1,12 @@
 <h1><%= @task.title %></h1>
 <% if @task.is_complete %>
-    <button disabled>Done</button>
+    <%= link_to(
+        'Set to Undone',
+        complete_task_path(@task.id)
+    )%>
 <% else %>
     <%= link_to(
-        'Complete',
+        'Set to Done',
         complete_task_path(@task.id)
     )%>
 <% end %>
