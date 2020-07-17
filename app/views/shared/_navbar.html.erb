@@ -1,8 +1,8 @@
 <nav>
     <ul>
-        <%= link_to 'Tasks List', tasks_path %>
-        |
         <% if user_signed_in? %>
+            <%= link_to 'Tasks List', tasks_path %>
+            |
             <%= link_to 'New Task', new_task_path %>
             |
             <%= current_user.first_name %>

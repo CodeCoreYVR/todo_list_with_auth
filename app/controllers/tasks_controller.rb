@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
     before_action :find_task, only: [:show, :edit, :update, :destroy, :complete_task]
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!
     before_action :authorize!, only: [:edit, :update, :destroy, :complete_task]
     # show the list of tasks
     def index 
-        @tasks = Task.order(created_at: :desc)
+        @tasks = Task.where(user_id: current_user.id).order(created_at: :desc)
     end
 
     def new
