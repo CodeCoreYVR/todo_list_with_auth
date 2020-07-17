@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    before_action :authenticate_user!, except: [:index, :show]
     # show the list of tasks
     def index 
         @tasks = Task.order(created_at: :desc)
