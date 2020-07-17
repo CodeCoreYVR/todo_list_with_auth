@@ -4,3 +4,11 @@
 <% else %>
     <button>Complete</button>
 <% end %>
+<div>
+    <%= link_to(
+        'Delete', 
+        task_path(@task),
+        method: :delete,
+        data: { confirm: 'are you sure?' }
+    )%>
+</div>
