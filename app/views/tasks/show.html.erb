@@ -1,0 +1,6 @@
+<h1><%= @task.title %></h1>
+<% if @task.is_complete %>
+    <button disabled>Done</button>
+<% else %>
+    <button>Complete</button>
+<% end %>
